@@ -1,0 +1,10 @@
+.cards__item {
+  text-overflow: ellipsis;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 282px;
+ height: 361px;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ overflow: hidden;
+}

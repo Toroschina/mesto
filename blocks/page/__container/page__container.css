@@ -1,0 +1,8 @@
+.page__container {
+  font-family: 'Inter', Arial, sans-serif;
+  max-width: 880px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

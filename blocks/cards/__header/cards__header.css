@@ -1,0 +1,12 @@
+.cards__header{
+
+}
+
+.cards__header:hover{
+opacity: 50%;
+  }
+
+  .cards__header:active{
+background: url(../../../images/heart_black.svg);
+opacity: 100%;
+    }

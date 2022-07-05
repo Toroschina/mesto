@@ -1,0 +1,9 @@
+.description{
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+  padding-top: 16px;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 400;
+}

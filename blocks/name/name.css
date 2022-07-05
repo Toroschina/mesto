@@ -1,0 +1,9 @@
+.name{
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  font-size: 42px;
+  padding-top: 22px;
+  line-height: 48px;
+  font-weight: 500;
+}
