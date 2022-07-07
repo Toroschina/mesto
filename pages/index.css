@@ -1,5 +1,5 @@
 @import url(../vendor/normalize.css);
-@import url(../js/scripts.js);
+
 @import url(../blocks/page/page.css);
 @import url(../blocks/page/__container/page__container.css);
 
@@ -41,3 +41,4 @@
 @import url(../blocks/form/__text-input/form__text-input.css);
 @import url(../blocks/form/__line/form__line.css);
 @import url(../blocks/form/form.css);
+@import url(../js/scripts.js);
