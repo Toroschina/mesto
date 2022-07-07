@@ -1,7 +1,27 @@
 .button__add{
-  width: 22px;
-  height: 22px;
-  position: relative;
-  top: 14px;
-  left: 64px;
+  width: 150px;
+  height: 50px;
+  max-width: 300px;
+  background-color: #000;
+  border: none;
+  border: solid 2px #fff;
+  background-image: url('../../../images/Vector.svg');
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+    cursor: pointer;
+    transition: opacity .2s;
+
+}
+
+.button__add:hover {
+  opacity: 60%;
+}
+
+@media screen and (max-width: 830px) {
+  .button__add {
+    background-size: 16px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }

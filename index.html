@@ -12,22 +12,34 @@
     <div class="page__container">
       <header class="header">
         <img class="header__logo" src="./images/logo/logo.svg" alt="логотип" />
-        <img class="header__line" src="./images/Line.svg" alt="линия" />
+        <div class="header__line"></div>
       </header>
       <div class="profile">
         <img class="avatar" src="./images/Avatar.png" alt="аватар" />
         <div class="profile-info">
           <h2 class="profile name">Жак-Ив&nbsp;Кусто</h2>
           <p class="profile description">Исследователь&nbsp;океана</p>
-          <div class="button2">
-            <img class="button__edit" src="./images/edit.svg" alt="изменить" />
-          </div>
-          <div></div>
+       <button class="button__edit"id="button__edit" type="submit">
+        </button>
         </div>
-        <div class="button1">
-          <img class="button__add" src="./images/Vector.svg" alt="добавить" />
-        </div>
-      </div>
+          <button class="button__add" type="button">
+        </button>
+</div>
+<div class="popup popup_opened">
+  <div class="popup__container popup__container_type_profile" >
+    <h2 class="popup__title">Редактировать профиль</h2>
+<form class="form" name="form">
+  <label class="form__field">
+    <input class="form__text-input" type="text" id="user-name" placeholder="Имя">
+  </label>        <div class="form__line"></div>
+  <label class="field">
+    <input class="form__text-input" type="text" id="user-description" placeholder="О себе">
+  </label>  <div class="form__line"></div>
+  <button type="submit" class="button__save">Сохранить</button>
+</form>
+  <button class="button__close" type="button"></button>
+  </div>
+</div>
       <div class="elements">
         <ul class="cards">
           <li class="cards__item">
@@ -37,9 +49,13 @@
               alt="Карачаевск"
             />
             <div class="card">
-            <p class="cards__description">Карачаевск</p>
-            <img class="cards__header" src="./images/heart.svg" alt="сердце" />
-          </div>
+              <p class="cards__description">Карачаевск</p>
+              <img
+                class="cards__header"
+                src="./images/heart.svg"
+                alt="сердце"
+              />
+            </div>
           </li>
           <li class="cards__item">
             <img
@@ -48,16 +64,24 @@
               alt="Гора Эльбрус"
             />
             <div class="card">
-            <p class="cards__description">Гора Эльбрус</p>
-            <img class="cards__header" src="./images/heart.svg" alt="сердце" />
+              <p class="cards__description">Гора Эльбрус</p>
+              <img
+                class="cards__header"
+                src="./images/heart.svg"
+                alt="сердце"
+              />
             </div>
           </li>
 
           <li class="cards__item">
             <img class="cards__image" src="images/dombai.png" alt="Домбай" />
             <div class="card">
-            <p class="cards__description">Домбай</p>
-            <img class="cards__header" src="./images/heart.svg" alt="сердце" />
+              <p class="cards__description">Домбай</p>
+              <img
+                class="cards__header"
+                src="./images/heart.svg"
+                alt="сердце"
+              />
             </div>
           </li>
           <li class="cards__item">
@@ -67,15 +91,23 @@
               alt="Гора Эльбрус"
             />
             <div class="card">
-            <p class="cards__description">Гора Эльбрус</p>
-            <img class="cards__header" src="./images/heart.svg" alt="сердце" />
+              <p class="cards__description">Гора Эльбрус</p>
+              <img
+                class="cards__header"
+                src="./images/heart.svg"
+                alt="сердце"
+              />
             </div>
           </li>
           <li class="cards__item">
             <img class="cards__image" src="images/dombai.png" alt="Домбай" />
             <div class="card">
-            <p class="cards__description">Домбай</p>
-            <img class="cards__header" src="./images/heart.svg" alt="сердце" />
+              <p class="cards__description">Домбай</p>
+              <img
+                class="cards__header"
+                src="./images/heart.svg"
+                alt="сердце"
+              />
             </div>
           </li>
           <li class="cards__item">
@@ -85,8 +117,12 @@
               alt="Карачаево-Черкесия"
             />
             <div class="card">
-            <p class="cards__description">Карачаево-Черкесия</p>
-            <img class="cards__header" src="./images/heart.svg" alt="сердце" />
+              <p class="cards__description">Карачаево-Черкесия</p>
+              <img
+                class="cards__header"
+                src="./images/heart.svg"
+                alt="сердце"
+              />
             </div>
           </li>
         </ul>
@@ -95,5 +131,6 @@
         <p class="footer__copyright">© 2020 Mesto Russia</p>
       </div>
     </div>
+  </div>
   </body>
 </html>

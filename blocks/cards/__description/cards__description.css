@@ -3,9 +3,10 @@
 width: 282px;
   color: #000;
   font-size: 24px;
-  padding: 25px 0 31px 21px;
   line-height: 29.05px;
   font-weight: 900;
   margin: 0;
-
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

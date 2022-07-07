@@ -7,3 +7,14 @@
   line-height: 21.78px;
   font-weight: 400;
 }
+
+@media screen and (max-width:830px) {
+  .description {
+    font-size: 14px;
+    line-height: 16.94px;
+    font-weight: 400;
+    padding-top: 14px;
+    padding-bottom: 36px;
+    grid-column: 1/3;
+  }
+}
