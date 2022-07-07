@@ -15,7 +15,7 @@
   buttonEdit.addEventListener('click', popupOpen);
   buttonClose.addEventListener('click', popupClose);
 
-/*   let formElement = document.querySelector('.popup__container');
+  let formElement = document.querySelector('.popup__container');
   let nameInput = formElement.querySelector('#user-name');
   let jobInput = formElement.querySelector('#user-description');
 
@@ -32,4 +32,4 @@
   popup.classList.remove('popup_opened');
   }
 
-  formElement.addEventListener('submit', formSubmitHandler); */
+  formElement.addEventListener('submit', formSubmitHandler); 
