@@ -1,5 +1,5 @@
-  const buttonEdit = document.querySelector('.button_edit');
-  const buttonClose = document.querySelector('.button_close');
+  const buttonEdit = document.querySelector('.button-edit');
+  const buttonClose = document.querySelector('.button-close');
   const popup = document.querySelector('.popup');
 
   function popupOpen(evt) {
