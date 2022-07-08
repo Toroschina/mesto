@@ -18,8 +18,8 @@
       <div class="profile">
         <img class="avatar" src="./images/Avatar.png" alt="аватар" />
         <div class="profile-info">
-          <h2 class="profile name">Жак-Ив&nbsp;Кусто</h2>
-          <p class="profile description">Исследователь&nbsp;океана</p>
+          <h2 class="profile name" id="user-name">Жак-Ив&nbsp;Кусто</h2>
+          <p class="profile description" id="user-description">Исследователь&nbsp;океана</p>
        <button class="button__edit"id="button__edit" type="submit">
         </button>
         </div>
@@ -31,10 +31,10 @@
     <h2 class="popup__title">Редактировать профиль</h2>
 <form class="form" name="form">
   <label class="form__field">
-    <input class="form__text-input" type="text" id="user-name" placeholder="Имя">
+    <input class="form__text-input" type="text" id="user-name" name="user-name" placeholder="Имя" value="Жак-Ив Кусто">
   </label>        <div class="form__line"></div>
   <label class="field">
-    <input class="form__text-input" type="text" id="user-description" placeholder="О себе">
+    <input class="form__text-input" type="text" id="user-description" name="user-description" placeholder="О себе" value="Исследователь океана">
   </label>  <div class="form__line"></div>
   <button type="submit" class="button__save">Сохранить</button>
 </form>
