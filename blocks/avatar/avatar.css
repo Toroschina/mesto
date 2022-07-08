@@ -2,8 +2,6 @@
   display: grid;
   max-width: 120px;
   max-height: 120px;
-/*   padding-right: 30px; */
-
 }
 
 @media screen and (max-width:1280) {
