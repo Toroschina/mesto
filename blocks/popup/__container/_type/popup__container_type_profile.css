@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width:595px) {
-  .footer__copyright {
+  .popup__container_type_profile {
     height: 322px;
   }
 }
