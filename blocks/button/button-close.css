@@ -6,7 +6,7 @@
     right: -40px;
     background-color: transparent;
     border: 0;
-    background-image: url('../../../images/CloseIcon.svg');
+    background-image: url('../../images/CloseIcon.svg');
     background-size: cover;
     transition: opacity .2s;
     cursor: pointer;
