@@ -1,8 +1,5 @@
 .cards__item {
-  text-overflow: ellipsis;
   background-color: #fff;
   border-radius: 10px;
   width: 282px;
- height: 361px;
-
 }

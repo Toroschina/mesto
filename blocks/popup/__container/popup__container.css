@@ -8,3 +8,9 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: 456px) {
+  .popup__container {
+    max-width: calc(100% - 19px * 2);
+  }
+}

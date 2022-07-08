@@ -1,0 +1,19 @@
+.cards__like {
+  width: 25px;
+  height: 19px;
+  background-color: transparent;
+  border: 0;
+  background-image: url('../../../images/heart.svg');
+  transition: opacity .2s;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+.cards__like:hover {
+opacity: .5;
+}
+.cards__like:active {
+  background: url(../../../images/heart_black.svg);
+  background-repeat: no-repeat;
+  opacity: 100%;
+  transition: opacity 0.2s;
+}
