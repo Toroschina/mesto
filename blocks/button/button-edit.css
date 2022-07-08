@@ -1,4 +1,4 @@
-.button_edit{
+.button-edit{
   width: 24px;
   height: 24px;
   border: 1px solid #fff;
@@ -14,12 +14,12 @@
   cursor: pointer;
 }
 
-.button_edit:hover {
+.button-edit:hover {
   opacity: 60%;
 }
 
 @media screen and (max-width:830px) {
-  .button_edit {
+  .button-edit {
     position: relative;
     top: 7px;
     right: 0;

@@ -1,4 +1,4 @@
-.button_add{
+.button-add{
   width: 150px;
   height: 50px;
   max-width: 300px;
@@ -14,12 +14,12 @@
 
 }
 
-.button_add:hover {
+.button-add:hover {
   opacity: 60%;
 }
 
 @media screen and (max-width: 830px) {
-  .button_add {
+  .button-add {
     background-size: 16px;
     width: 100%;
     margin: 0 auto;

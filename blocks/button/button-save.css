@@ -1,4 +1,4 @@
-.button_save {
+.button-save {
   height: 50px;
   width: 100%;
   color: #fff;
@@ -10,12 +10,12 @@
   transition: opacity .2s;
 }
 
-.button_save:hover {
+.button-save:hover {
   opacity: .8;
 }
 
 @media screen and (max-width: 830px) {
-  .button_save {
+  .button-save {
     height: 44px;
     font-size: 14px;
   }
