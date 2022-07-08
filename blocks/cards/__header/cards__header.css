@@ -1,14 +1,14 @@
-.cards__header{
-  transition: opacity .2s;
+.cards__header {
+  transition: opacity 0.2s;
 }
 
-.cards__header:hover{
-opacity: 50%;
-  }
+.cards__header:hover {
+  opacity: 50%;
+}
 
-  .cards__header:active{
-background: url(../../../images/heart_black.svg);
-background-repeat: no-repeat;
-opacity: 100%;
-transition: opacity .2s;
-    }
+.cards__header:active {
+  background: url(../../../images/heart_black.svg);
+  background-repeat: no-repeat;
+  opacity: 100%;
+  transition: opacity 0.2s;
+}
