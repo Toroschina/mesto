@@ -15,6 +15,6 @@
 
 @media screen and (max-width:830px) {
   .profile-info{
-    flex-basis: 0;
+    flex-basis: auto;
   }
 }
