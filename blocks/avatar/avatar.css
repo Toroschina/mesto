@@ -4,7 +4,7 @@
   max-height: 120px;
 }
 
-@media screen and (max-width:1280) {
+@media screen and (max-width:1280px) {
   .avatar {
     padding-bottom: 22px;
   }
