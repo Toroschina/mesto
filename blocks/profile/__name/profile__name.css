@@ -1,4 +1,5 @@
 .profile__name{
+  max-width: 294px;
   grid-column: 1;
   grid-row: 1;
   margin: 0;
