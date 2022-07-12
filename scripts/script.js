@@ -3,8 +3,8 @@
   const popup = document.querySelector('.popup');
 
   let formElement = document.querySelector('.popup__container');
-  let nameInput = formElement.querySelector('.popup__text-input_name');
-  let jobInput = formElement.querySelector('.popup__text-input_description');
+  let nameInput = formElement.querySelector('#user-name');
+  let jobInput = formElement.querySelector('#user-title');
   let profileName = document.querySelector('.profile__name');
   let profileDescription = document.querySelector('.profile__description');
 
