@@ -28,74 +28,62 @@
         </div>
         <button class="profile__button-add" type="button"></button>
       </section>
-      <section class="elements">
-        <ul class="cards">
+      <ul class="cards">
+        <template id="cards-element">
           <li class="cards__item">
-            <img class="cards__image" src="images/karahaevsk.jpg" alt="Карачаевск" />
+            <button class="cards__basket" type="button"></button>
+            <img class="cards__image"
+              src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
+              alt="фото пользователя" />
             <div class="cards__container">
-              <h2 class="cards__title">Карачаевск</h2>
+              <h2 class="cards__title"></h2>
               <button class="cards__like" type="button"></button>
             </div>
           </li>
-          <li class="cards__item">
-            <img class="cards__image" src="images/gora-ilbrus.png" alt="Гора Эльбрус" />
-            <div class="cards__container">
-              <h2 class="cards__title">Гора Эльбрус</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
+        </template>
+      </ul>
 
-          <li class="cards__item">
-            <img class="cards__image" src="images/dombai.png" alt="Домбай" />
-            <div class="cards__container">
-              <h2 class="cards__title">Домбай</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img class="cards__image" src="images/gora-ilbrus.png" alt="Гора Эльбрус" />
-            <div class="cards__container">
-              <h2 class="cards__title">Гора Эльбрус</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img class="cards__image" src="images/dombai.png" alt="Домбай" />
-            <div class="cards__container">
-              <h2 class="cards__title">Домбай</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img class="cards__image" src="images/karahaevsk.jpg" alt="Карачаево-Черкесия" />
-            <div class="cards__container">
-              <h2 class="cards__title">Карачаево-Черкесия</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-        </ul>
-      </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <!-- Попап Редактирование профиля -->
+    <div class="popup popup_edit" id="popup-edit">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="form">
-          <label class="popup__field">
-            <input class="popup__text-input" type="text" id="user-name" name="user-name"
-              placeholder="Имя" value="Жак-Ив Кусто" />
-          </label>
-          <label class="popup__field">
-            <input class="popup__text-input" type="text" id="user-title" name="user-title"
-              placeholder="О себе" value="Исследователь океана" />
-          </label>
+          <input class="popup__text-input" type="text" id="user-name" name="user-name" placeholder="Имя"
+            value="Жак-Ив Кусто" />
+          <input class="popup__text-input" type="text" id="user-title" name="user-title" placeholder="О себе"
+            value="Исследователь океана" />
           <button type="submit" class="popup__button-save">Сохранить</button>
         </form>
-        <button class="popup__button-close" type="button"></button>
+        <button class="popup__button-close close" type="button"></button>
       </div>
     </div>
+    <!-- Попап создание карточки -->
+    <div class="popup popup_card" id="popup-card">
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" name="form">
+          <input class="popup__text-input" type="text" id="card-name" name="card-name" placeholder="Название" />
+          <input class="popup__text-input" type="text" id="card-address" name="card-address"
+            placeholder="Ссылка на картинку" />
+          <button type="submit" class="popup__button-save">Создать</button>
+        </form>
+        <button class="popup__button-close close" type="button"></button>
+      </div>
+    </div>
+    <!-- Попап картинки-->
+    <div class="popup popup_image"></div>
+      <template id="popup-image">
+        <figure class="popup__container">
+          <button class="popup__button-close close" type="button"></button>
+          <img class="popup__image" src="#https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Фото">
+          <h2 class="popup__text">Подпись</h2>
+        </figure>
+      </template>
+  </div>
   </div>
   <script src="./scripts/script.js"></script>
 </body>

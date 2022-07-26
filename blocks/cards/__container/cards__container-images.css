@@ -1,0 +1,5 @@
+.cards__container-images{
+  display: flex;
+  padding: 0;
+  justify-content: flex-end;
+}

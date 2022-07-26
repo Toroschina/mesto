@@ -1,0 +1,16 @@
+.cards__basket {
+  background-image: url(../../../images/basket.svg);
+  border: 0;
+  width: 18px;
+  height: 19px;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.cards__basket:hover {
+  opacity: 0.5;
+}
