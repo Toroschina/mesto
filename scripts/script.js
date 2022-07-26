@@ -49,8 +49,8 @@ let profileDescription = document.querySelector('.profile__description');  //о�
 let nameCard = formElementCard.querySelector('#card-name');
 let linkCard = formElementCard.querySelector('#card-address');
 
-const image = page.querySelector('.popup__image'); // картинка
-const textPopup = page.querySelector('.popup__text');  //подпись картинки
+/* const image = page.querySelector('.popup__image'); // картинка
+const textPopup = page.querySelector('.popup__text');  //подпись картинки */
 
 const cardElementCard = page.querySelector('#cards-element').content; //шаблон карточки
 const cardElements = page.querySelector('.cards'); //карточка
