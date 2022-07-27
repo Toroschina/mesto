@@ -1,5 +1,7 @@
-.popup__container-image{
+.popup__container-image {
   display: flex;
   box-sizing: border-box;
   position: relative;
+  gap: 10px;
+  flex-direction: column;
 }
