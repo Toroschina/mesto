@@ -76,8 +76,8 @@ const formElement = page.querySelectorAll(selectors.formElement)[0]; //форм�
 
 const nameInput = formElement.querySelector(selectors.nameInput); //поле имя в форме
 const jobInput = formElement.querySelector(selectors.jobInput); //поле о себе в форме
-const profileName = document.querySelector(selectors.profileName); //от куда вставляеться в поле Имя
-const profileDescription = document.querySelector(selectors.profileDescription); //от куда вставляеться в поле О себе
+const profileName = page.querySelector(selectors.profileName); //от куда вставляеться в поле Имя
+const profileDescription = page.querySelector(selectors.profileDescription); //от куда вставляеться в поле О себе
 
 const popupCard = page.querySelector(selectors.popupCard); // попап создания
 const formElementCard = page.querySelectorAll(selectors.formElementCard)[1]; //форма попап создания
@@ -89,48 +89,58 @@ const popupImage = page.querySelector(selectors.popupImage); // картинка
 const popupText = page.querySelector(selectors.popupText); //подпись картинки
 
 function createCard(link, name) {
-  const cardElement = cardsTemplate.querySelector(selectors.cardElement).cloneNode(true);
+  const cardElement = cardsTemplate
+    .querySelector(selectors.cardElement)
+    .cloneNode(true);
   const cardsImage = cardElement.querySelector(selectors.cardsImage);
   const cardName = cardElement.querySelector(selectors.cardsName);
   const buttonDel = cardElement.querySelector(selectors.buttonDel);
   const buttonLike = cardElement.querySelector(selectors.buttonLike);
 
+  cardName.textContent = name;
   cardsImage.src = link;
   cardsImage.alt = name;
-  cardName.textContent = name;
 
   buttonDel.addEventListener('click', () => cardElement.remove());
 
-  buttonLike.addEventListener('click', () => buttonLike.classList.toggle(selectors.like));
+  buttonLike.addEventListener('click', () =>
+    buttonLike.classList.toggle(selectors.like)
+  );
 
   cardsImage.addEventListener('click', () => {
     popupImage.src = link;
     popupImage.alt = name;
     popupText.textContent = name;
     popupOpen(popupImg);
-  })
+  });
 
   return cardElement;
 }
 
-function addEventListener() {
-  formElementCard.addEventListener('submit', (e) => {
-    e.preventDefault();
-    cardElements.prepend(createCard(linkCard.value, nameCard.value));
-    popupClose(popupCard);
-  })
+function renderCard(container, data, position = 'before') {
+  switch (position) {
+    case 'before':
+      container.prepend(createCard(data.link, data.name));
+      break;
+    case 'after':
+      container.append(createCard(data.link, data.name));
+    default:
+      break;
+  }
 }
 
 function addEventListener() {
   formElementCard.addEventListener('submit', (e) => {
     e.preventDefault();
+    renderCard(cards, { link: linkCard.value, name: nameCard.value }, 'before');
     popupClose(popupCard);
   });
 }
+
 addEventListener();
 
 function createInitialCard() {
-  initialCards.forEach((item) => cards.append(createCard(item.link, item.name)))
+  initialCards.forEach((item) => renderCard(cards, item, 'after'));
 }
 
 createInitialCard();
@@ -143,13 +153,14 @@ function popupClose(pop) {
   pop.classList.remove(selectors.popupOpened);
 } //закрыть попап
 
-function popupCloseAll(evt) {
-  const target = evt.target;
+function popupCloseAll(e) {
+  const target = e.target;
   const modal = target.closest(selectors.popup);
   if (target.classList.contains(selectors.close) || target === modal) {
     popupClose(modal);
   }
 } // закрытие по всем кнопкам
+
 function insertValuesFromField() {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
@@ -166,9 +177,9 @@ function addformSubmitHandler(e) {
   popupClose(formElement);
 } // Вставляет значения из полей
 
-page.addEventListener('click', popupCloseAll); //закрыть попап
+page.addEventListener('mousedown', popupCloseAll); //закрыть попап
 
-page.addEventListener('submit', addformSubmitHandler);
+formElement.addEventListener('submit', addformSubmitHandler);
 
 buttonEdit.addEventListener('click', () => {
   insertValuesToField(); // Вставляем значения из документа в поля формы с помощью textContent
