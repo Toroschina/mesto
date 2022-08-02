@@ -88,45 +88,49 @@ const popupImg = page.querySelector(selectors.popupImg); // попап карт�
 const popupImage = page.querySelector(selectors.popupImage); // картинка
 const popupText = page.querySelector(selectors.popupText); //подпись картинки
 
-function createCard(name, link) {
-  const cardElements = cardsTemplate
-    .querySelector(selectors.cardElement)
-    .cloneNode(true);
-  const cardsName = cardElements.querySelector(selectors.cardsName);
-  const cardsImage = cardElements.querySelector(selectors.cardsImage);
-  const butDel = cardElements.querySelector(selectors.buttonDel);
-  const butLike = cardElements.querySelector(selectors.buttonLike);
+function createCard(link, name) {
+  const cardElement = cardsTemplate.querySelector(selectors.cardElement).cloneNode(true);
+  const cardsImage = cardElement.querySelector(selectors.cardsImage);
+  const cardName = cardElement.querySelector(selectors.cardsName);
+  const buttonDel = cardElement.querySelector(selectors.buttonDel);
+  const buttonLike = cardElement.querySelector(selectors.buttonLike);
 
   cardsImage.src = link;
   cardsImage.alt = name;
-  cardsName.textContent = name;
+  cardName.textContent = name;
 
-  butDel.addEventListener('click', () => cardElements.remove());
-  butLike.addEventListener('click', () =>
-    butLike.classList.toggle(selectors.like)
-  );
+  buttonDel.addEventListener('click', () => cardElement.remove());
+
+  buttonLike.addEventListener('click', () => buttonLike.classList.toggle(selectors.like));
 
   cardsImage.addEventListener('click', () => {
     popupImage.src = link;
     popupImage.alt = name;
     popupText.textContent = name;
     popupOpen(popupImg);
-  });
+  })
 
-  return cardElements;
+  return cardElement;
 }
 
 function addEventListener() {
   formElementCard.addEventListener('submit', (e) => {
     e.preventDefault();
-    closePopup(popupCard);
-  });
+    cardElements.prepend(createCard(linkCard.value, nameCard.value));
+    popupClose(popupCard);
+  })
 }
 
+function addEventListener() {
+  formElementCard.addEventListener('submit', (e) => {
+    e.preventDefault();
+    popupClose(popupCard);
+  });
+}
 addEventListener();
 
 function createInitialCard() {
-  initialCards.forEach((item) => createCard(item.link, item.name));
+  initialCards.forEach((item) => cards.append(createCard(item.link, item.name)))
 }
 
 createInitialCard();
@@ -134,6 +138,7 @@ createInitialCard();
 function popupOpen(pop) {
   pop.classList.add(selectors.popupOpened);
 } //форма открытия редактирования
+
 function popupClose(pop) {
   pop.classList.remove(selectors.popupOpened);
 } //закрыть попап
@@ -162,7 +167,8 @@ function addformSubmitHandler(e) {
 } // Вставляет значения из полей
 
 page.addEventListener('click', popupCloseAll); //закрыть попап
-formElement.addEventListener('submit', addformSubmitHandler); //лайк карточки
+
+page.addEventListener('submit', addformSubmitHandler);
 
 buttonEdit.addEventListener('click', () => {
   insertValuesToField(); // Вставляем значения из документа в поля формы с помощью textContent
