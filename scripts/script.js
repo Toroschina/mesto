@@ -70,6 +70,7 @@ const cardsTemplate = page.querySelector(selectors.cardsTemplate).content; //ш�
 //Кнопки
 const buttonEdit = page.querySelector(selectors.buttonEdit); //редактировать
 const buttonAdd = page.querySelector(selectors.buttonAdd); //добавить
+const buttonClose =page.querySelector(selectors.close);
 
 const popupEdit = page.querySelector(selectors.popupEdit); //попап редактирования
 const formElement = page.querySelectorAll(selectors.formElement)[0]; //форма попап редактирования
