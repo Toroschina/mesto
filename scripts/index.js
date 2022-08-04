@@ -1,34 +1,7 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  },
-]; // массив карточек
-
 const selectors = {
   page: '.page',
   //шаблон карточки
-  cards: '.cards',
+  card: '.cards',
   cardsTemplate: '#cards-template',
   cardElement: '.cards__item',
   buttonDel: '.cards__basket',
@@ -36,9 +9,9 @@ const selectors = {
   cardsName: '.cards__title',
   buttonLike: '.cards__like',
   //попап редактирования
-  popupEdit: '.popup_edit',
+  popupEdit: '.popup__form_edit',
   buttonEdit: '.profile__button-edit',
-  formElement: '.popup__container',
+  formElementEdit: '.popup__container',
   //попап данные и поля для заполения
   popup: '.popup',
   nameInput: '#user-name',
@@ -46,14 +19,14 @@ const selectors = {
   profileName: '.profile__name',
   profileDescription: '.profile__description',
   //попап добавления карточки
-  popupCard: '.popup_card',
+  popupCard: '.popup__form_card',
   buttonAdd: '.profile__button-add',
   formElementCard: '.popup__container',
   // попап данные и поля для заполения
   nameCard: '#card-name',
   linkCard: '#card-address',
   //попап картинки
-  popupImg: '.popup_image',
+  popupImg: '.popup__form_image',
   popupImage: '.popup__image',
   popupText: '.popup__text',
   //закрыть форму
@@ -64,7 +37,7 @@ const selectors = {
   like: 'cards__like-active',
 };
 const page = document.querySelector(selectors.page);
-const cards = page.querySelector(selectors.cards); //карточка
+const card = page.querySelector(selectors.card); //карточка
 const cardsTemplate = page.querySelector(selectors.cardsTemplate).content; //шаблон карточки
 
 //Кнопки
@@ -73,10 +46,10 @@ const buttonAdd = page.querySelector(selectors.buttonAdd); //добавить
 const buttonClose =page.querySelector(selectors.close);
 
 const popupEdit = page.querySelector(selectors.popupEdit); //попап редактирования
-const formElement = page.querySelectorAll(selectors.formElement)[0]; //форма попап редактирования
+const formElementEdit = page.querySelectorAll(selectors.formElementEdit)[0]; //форма попап редактирования
 
-const nameInput = formElement.querySelector(selectors.nameInput); //поле имя в форме
-const jobInput = formElement.querySelector(selectors.jobInput); //поле о себе в форме
+const nameInput = formElementEdit.querySelector(selectors.nameInput); //поле имя в форме
+const jobInput = formElementEdit.querySelector(selectors.jobInput); //поле о себе в форме
 const profileName = page.querySelector(selectors.profileName); //от куда вставляеться в поле Имя
 const profileDescription = page.querySelector(selectors.profileDescription); //от куда вставляеться в поле О себе
 
@@ -86,8 +59,8 @@ const nameCard = formElementCard.querySelector(selectors.nameCard); // имя к
 const linkCard = formElementCard.querySelector(selectors.linkCard); // адрес карточки
 
 const popupImg = page.querySelector(selectors.popupImg); // попап картинки
-const popupImage = page.querySelector(selectors.popupImage); // картинка
-const popupText = page.querySelector(selectors.popupText); //подпись картинки
+const popupImage = popupImg.querySelector(selectors.popupImage); // картинка
+const popupText = popupImg.querySelector(selectors.popupText); //подпись картинки
 
 function createCard(link, name) {
   const cardElement = cardsTemplate
@@ -133,15 +106,16 @@ function renderCard(container, data, position = 'before') {
 function addEventListener() {
   formElementCard.addEventListener('submit', (e) => {
     e.preventDefault();
-    renderCard(cards, { link: linkCard.value, name: nameCard.value }, 'before');
+    renderCard(card, { link: linkCard.value, name: nameCard.value }, 'before');
     popupClose(popupCard);
+    e.target.reset();
   });
 }
 
 addEventListener();
 
 function createInitialCard() {
-  initialCards.forEach((item) => renderCard(cards, item, 'after'));
+  initialCards.forEach((item) => renderCard(card, item, 'after'));
 }
 
 createInitialCard();
@@ -160,7 +134,7 @@ function popupCloseAll(e) {
   if (target.classList.contains(selectors.close) || target === modal) {
     popupClose(modal);
   }
-} // закрытие по всем кнопкам
+}// закрытие
 
 function insertValuesFromField() {
   profileName.textContent = nameInput.value;
@@ -175,12 +149,14 @@ function insertValuesToField() {
 function addformSubmitHandler(e) {
   e.preventDefault();
   insertValuesFromField();
-  popupClose(formElement);
-} // Вставляет значения из полей
+  popupClose(popupEdit);
+}
 
-page.addEventListener('mousedown', popupCloseAll); //закрыть попап
+popupEdit.addEventListener('mousedown', popupCloseAll); //закрыть попап редоктирования
+popupCard.addEventListener('mousedown', popupCloseAll); //закрыть попап карточки
+popupImg.addEventListener('mousedown', popupCloseAll); //закрыть попап картинки
 
-formElement.addEventListener('submit', addformSubmitHandler);
+formElementEdit.addEventListener('submit', addformSubmitHandler);
 
 buttonEdit.addEventListener('click', () => {
   insertValuesToField(); // Вставляем значения из документа в поля формы с помощью textContent

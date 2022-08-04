@@ -46,10 +46,10 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
     <!-- Попап Редактирование профиля -->
-    <div class="popup popup_edit" id="popup-edit">
+    <div class="popup popup__form_edit" id="popup-edit">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" name="form">
+        <form class="popup__form" name="form-edit">
           <input class="popup__text-input" type="text" id="user-name" name="user-name" placeholder="Имя"
             value="Жак-Ив Кусто" />
           <input class="popup__text-input" type="text" id="user-title" name="user-title" placeholder="О себе"
@@ -60,10 +60,10 @@
       </div>
     </div>
     <!-- Попап создание карточки -->
-    <div class="popup popup_card" id="popup-card">
+    <div class="popup popup__form_card" id="popup-card">
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form" name="form">
+        <form class="popup__form" name="form-card">
           <input class="popup__text-input" type="text" id="card-name" name="card-name" placeholder="Название" />
           <input class="popup__text-input" type="text" id="card-address" name="card-address"
             placeholder="Ссылка на картинку" />
@@ -73,7 +73,7 @@
       </div>
     </div>
     <!-- Попап картинки-->
-    <div class="popup popup_image" id="popup-image">
+    <div class="popup popup__form_image" id="popup-image">
         <figure class="popup__container-image">
           <button class="popup__button-close close" type="button"></button>
           <img class="popup__image" src="#" alt="Фото">
@@ -81,7 +81,8 @@
         </figure>
     </div>
   </div>
-  <script src="./scripts/script.js"></script>
+  <script src="./scripts/cards.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
