@@ -43,7 +43,9 @@ const cardsTemplate = page.querySelector(selectors.cardsTemplate).content; //ш�
 //Кнопки
 const buttonEdit = page.querySelector(selectors.buttonEdit); //редактировать
 const buttonAdd = page.querySelector(selectors.buttonAdd); //добавить
-const buttonClose =page.querySelector(selectors.close);
+const buttonCloseEdit =page.querySelector(selectors.close);
+const buttonCloseAdd =page.querySelector(selectors.close);
+const buttonCloseImg =page.querySelector(selectors.close);
 
 const popupEdit = page.querySelector(selectors.popupEdit); //попап редактирования
 const formElementEdit = page.querySelectorAll(selectors.formElementEdit)[0]; //форма попап редактирования
@@ -152,9 +154,9 @@ function addformSubmitHandler(e) {
   popupClose(popupEdit);
 }
 
-popupEdit.addEventListener('mousedown', popupCloseAll); //закрыть попап редоктирования
-popupCard.addEventListener('mousedown', popupCloseAll); //закрыть попап карточки
-popupImg.addEventListener('mousedown', popupCloseAll); //закрыть попап картинки
+popupEdit.addEventListener('click', popupCloseAll); //закрыть попап редактирования
+popupCard.addEventListener('click', popupCloseAll); //закрыть попап карточки
+popupImg.addEventListener('click', popupCloseAll); //закрыть попап картинки
 
 formElementEdit.addEventListener('submit', addformSubmitHandler);
 
