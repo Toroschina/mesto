@@ -9,7 +9,7 @@ const selectors = {
   cardsName: '.cards__title',
   buttonLike: '.cards__like',
   //попап редактирования
-  popupEdit: '.popup__form-edit',
+  popupEdit: '.popup_edit_form',
   buttonEdit: '.profile__button-edit',
   formElementEdit: '.popup__container',
   //попап данные и поля для заполения
@@ -19,14 +19,14 @@ const selectors = {
   profileName: '.profile__name',
   profileDescription: '.profile__description',
   //попап добавления карточки
-  popupCard: '.popup__form-card',
+  popupCard: '.popup_card_form',
   buttonAdd: '.profile__button-add',
   formElementCard: '.popup__container',
   // попап данные и поля для заполения
   nameCard: '#card-name',
   linkCard: '#card-address',
   //попап картинки
-  popupImg: '.popup__form-image',
+  popupImg: '.popup_image_form',
   popupImage: '.popup__image',
   popupText: '.popup__text',
   //закрыть форму
