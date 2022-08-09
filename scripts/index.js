@@ -43,12 +43,10 @@ const cardsTemplate = page.querySelector(selectors.cardsTemplate).content; //ш�
 //Кнопки
 const buttonEdit = page.querySelector(selectors.buttonEdit); //редактировать
 const buttonAdd = page.querySelector(selectors.buttonAdd); //добавить
-const buttonCloseEdit =page.querySelector(selectors.close);
-const buttonCloseAdd =page.querySelector(selectors.close);
-const buttonCloseImg =page.querySelector(selectors.close);
 
 const popupEdit = page.querySelector(selectors.popupEdit); //попап редактирования
 const formElementEdit = page.querySelectorAll(selectors.formElementEdit)[0]; //форма попап редактирования
+const buttonCloseEdit =popupEdit.querySelector(selectors.close);
 
 const nameInput = formElementEdit.querySelector(selectors.nameInput); //поле имя в форме
 const jobInput = formElementEdit.querySelector(selectors.jobInput); //поле о себе в форме
@@ -59,10 +57,12 @@ const popupCard = page.querySelector(selectors.popupCard); // попап соз�
 const formElementCard = page.querySelectorAll(selectors.formElementCard)[1]; //форма попап создания
 const nameCard = formElementCard.querySelector(selectors.nameCard); // имя карточки
 const linkCard = formElementCard.querySelector(selectors.linkCard); // адрес карточки
+const buttonCloseAdd =popupCard.querySelector(selectors.close);
 
 const popupImg = page.querySelector(selectors.popupImg); // попап картинки
 const popupImage = popupImg.querySelector(selectors.popupImage); // картинка
 const popupText = popupImg.querySelector(selectors.popupText); //подпись картинки
+const buttonCloseImg =popupImg.querySelector(selectors.close);
 
 function createCard(link, name) {
   const cardElement = cardsTemplate
