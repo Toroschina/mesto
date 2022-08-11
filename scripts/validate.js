@@ -1,5 +1,5 @@
 
-const showInputError = (formElement, inputElement, inputErrorClass, errorClass,errorMessage, config) => {
+const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(config.inputErrorClass);
   errorElement.classList.add(config.errorClass);
@@ -52,8 +52,8 @@ const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => !inputElement.validity.valid);
 };
 
-const disableButton = (buttonElement,validationConfig) => {
-  buttonElement.classList.add(validationConfig.inactiveButtonClass);
+const disableButton = (buttonElement,config) => {
+  buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
 }
 
@@ -76,5 +76,5 @@ enableValidation({
   submitButtonSelector: ".popup__button",
   inactiveButtonClass: ".popup__button_disabled",
   inputErrorClass: ".popup__input_type_error",
-  errorClass: "popup__error_visible",
+  errorClass: ".popup__error_visible",
 });
