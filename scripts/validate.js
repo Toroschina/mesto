@@ -17,8 +17,7 @@ const checkInputValidity = (formElement, inputElement) => {
     showInputError(
       formElement,
       inputElement,
-      inputElement.validationMessag,
-      obj
+      inputElement.validationMessag
     );
   } else {
     hideInputError(formElement, inputElement);
