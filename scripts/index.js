@@ -33,6 +33,8 @@ const selectors = {
   close: 'close',
   //открыть форму
   popupOpened: 'popup_opened',
+   //закрыть форму
+   popupOpenedClose: 'popup_opened',
   //лайк
   like: 'cards__like-active',
 };
@@ -122,12 +124,17 @@ function createInitialCard() {
 
 createInitialCard();
 
+
+
 function popupOpen(pop) {
   pop.classList.add(selectors.popupOpened);
+  document.addEventListener('keyup', popupOpenedCloseEsc);
 } //форма открытия редактирования
 
 function popupClose(pop) {
   pop.classList.remove(selectors.popupOpened);
+/*   debugger; */
+document.addEventListener('keyup', popupOpenedCloseEsc);
 } //закрыть попап
 
 function popupCloseAll(e) {
@@ -137,6 +144,13 @@ function popupCloseAll(e) {
     popupClose(modal);
   }
 }// закрытие
+
+function popupOpenedCloseEsc(evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = page.querySelector('.popup_opened');
+    popupClose(popupOpened);
+  }
+}// закрытие по ESC
 
 function insertValuesFromField() {
   profileName.textContent = nameInput.value;
@@ -157,6 +171,8 @@ function addformSubmitHandler(e) {
 popupEdit.addEventListener('click', popupCloseAll); //закрыть попап редактирования
 popupCard.addEventListener('click', popupCloseAll); //закрыть попап карточки
 popupImg.addEventListener('click', popupCloseAll); //закрыть попап картинки
+
+page.addEventListener('keydown', popupOpenedCloseEsc);
 
 formElementEdit.addEventListener('submit', addformSubmitHandler);
 

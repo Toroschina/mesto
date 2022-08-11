@@ -1,4 +1,4 @@
-.popup__text-input {
+.popup__input{
   font-size: 14px;
   line-height: 1.2;
   outline: none;
@@ -8,5 +8,10 @@
   padding-bottom: 13px;
   margin-bottom: 30px;
   border-bottom: solid 1px rgba(0,0,0,0.2);
-
 }
+
+.popup__input:invalid{
+  border-bottom: 1px solid red; 
+}
+
+
