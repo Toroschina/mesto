@@ -53,14 +53,14 @@
           <label class="popup__field">
           <input class="popup__input" type="text" id="user-name" name="user-name" placeholder="Имя"
             value="Жак-Ив Кусто" minlength="2" maxlength="40" />
-            <span class="popup__error">Вы пропустили это поле.</span>
+            <span class="popup__error user-name-error">Вы пропустили это поле.</span>
             </label>
             <label class="popup__field">
             <input class="popup__input" type="text" id="user-title" name="user-title" placeholder="О себе"
             value="Исследователь океана" minlength="2" maxlength="200" />
-          <span class="popup__error popup__error_visible"></span>
+          <span class="popup__error user-title-error"></span>
             </label>
-          <button type="submit" class="popup__button">Сохранить</button>
+          <button type="submit" class="popup__button" >Сохранить</button>
         </form>
         <button class="popup__button-close close" type="button"></button>
       </div>
@@ -72,12 +72,12 @@
         <form class="popup__form" name="form-card">
           <label class="popup__field">
           <input class="popup__input" type="text" id="card-name" name="card-name" placeholder="Название" minlength="2" maxlength="30"/>
-          <span class="popup__error">Вы пропустили это поле.</span>
+          <span class="popup__error card-name-error">Вы пропустили это поле.</span>
         </label>
           <label class="popup__field">
           <input class="popup__input" type="url" id="card-address" name="card-address"
             placeholder="Ссылка на картинку" />
-            <span class="popup__error">Введите адрес сайта.</span>
+            <span class="popup__error card-address-error">Введите адрес сайта.</span>
           </label>
           <button type="submit" class="popup__button popup__button_disabled" disabled>Создать</button>
         </form>
