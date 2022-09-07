@@ -50,7 +50,7 @@ function createCard(link, name) {
     popupImage.src = link;
     popupImage.alt = name;
     popupText.textContent = name;
-    popupOpen(popupImg);
+    openPopup(popupImg);
   });
 
   return cardElement;
@@ -72,7 +72,7 @@ function addEventListener() {
   formElementCard.addEventListener("submit", (e) => {
     e.preventDefault();
     renderCard(card, { link: linkCard.value, name: nameCard.value }, "before");
-    popupClose(popupCard);
+    closePopup(popupCard);
     e.target.reset();
   });
 }
@@ -85,13 +85,13 @@ function renderInitialCards() {
 
 renderInitialCards();
 
-function popupOpen(pop) {
-  pop.classList.add(selectors.popupOpened);
+function openPopup(pop) {
+  pop.classList.add(selectors.openPopuped);
   document.addEventListener("keyup", closeByEscPress);
 } //форма открытия редактирования
 
-function popupClose(pop) {
-  pop.classList.remove(selectors.popupOpened);
+function closePopup(pop) {
+  pop.classList.remove(selectors.openPopuped);
   document.addEventListener("keyup", closeByEscPress);
 } //закрыть попап
 
@@ -99,14 +99,14 @@ function closeByOverlayClick(e) {
   const target = e.target;
   const modal = target.closest(selectors.popup);
   if (target.classList.contains(selectors.close) || target === modal) {
-    popupClose(modal);
+    closePopup(modal);
   }
 } // закрытие
 
 function closeByEscPress(evt) {
   if (evt.key === "Escape") {
-    const popupOpened = page.querySelector(".popup_opened");
-    popupClose(popupOpened);
+    const openPopuped = page.querySelector(".popup_opened");
+    closePopup(openPopuped);
   }
 } // закрытие по ESC
 
@@ -123,7 +123,7 @@ function insertValuesToField() {
 function addformSubmitHandler(e) {
   e.preventDefault();
   insertValuesFromField();
-  popupClose(popupEdit);
+  closePopup(popupEdit);
 }
 
 popupEdit.addEventListener("click", closeByOverlayClick); //закрыть попап редактирования
@@ -134,7 +134,7 @@ formElementEdit.addEventListener("submit", addformSubmitHandler);
 
 buttonEdit.addEventListener("click", () => {
   insertValuesToField(); // Вставляем значения из документа в поля формы с помощью textContent
-  popupOpen(popupEdit);
+  openPopup(popupEdit);
 });
 
-buttonAdd.addEventListener("click", () => popupOpen(popupCard));
+buttonAdd.addEventListener("click", () => openPopup(popupCard));

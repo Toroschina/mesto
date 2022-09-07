@@ -32,7 +32,7 @@ const selectors = {
   //закрыть форму
   close: "close",
   //открыть форму
-  popupOpened: "popup_opened",
+  openPopuped: "popup_opened",
   //закрыть форму
   popupOpenedClose: "popup_opened",
   //лайк
