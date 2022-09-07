@@ -1,4 +1,3 @@
-
 const page = document.querySelector(selectors.page);
 const card = page.querySelector(selectors.card); //карточка
 const cardsTemplate = page.querySelector(selectors.cardsTemplate).content; //шаблон карточки
